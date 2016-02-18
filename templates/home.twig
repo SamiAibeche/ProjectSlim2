@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:81/SlimProject2/wines/src/css/bootstrap.min.css">
+	<script src="http://localhost:81/SlimProject2/wines/src/js/jquery-1.11.3.min.js"></script>
+	<script src="http://localhost:81/SlimProject2/wines/src/js/bootstrap.js"></script>
+	<style>
+		body{
+			text-align: center
+		}
+		.jumbotron{
+			background-color: transparent;
+		}
+		span{
+			font-size: 20px;
+			color: black;
+			cursor: pointer;
+		}
+		span:hover{
+			color: grey;
+		}
+	</style>
+</head>
+<body>
+    <div class="jumbotron" id="home">
+        <div class="container">
+            <h1 class="mainTitre">Wine Bar</h1>
+            <p>Wine from your area</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="catalog">
+			{% for data in datas %}
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" style="padding-bottom: 50px">
+					<p class="col-xs-12 col-sm-10 col-sm-push-3 col-md-10 col-md-push-1 col-lg-12 col-lg-push-0">
+					<strong>{{ data.name }} - {{ data.year }}</strong></p>
+					<img  class="img-responsive col-md-6 col-md-offset-3 col-sm-offset-4 col-xs-offset-3"
+				 id="img{{ data.id }}" src="http://localhost:81/SlimProject2/wines/img/{{ data.picture }}" alt="{{ data.name }}" />	
+				</div>
+			{% endfor %}  
+        </div> 
+    </div>
+</body>
+</html>
