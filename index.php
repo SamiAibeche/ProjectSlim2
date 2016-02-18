@@ -128,7 +128,7 @@ $app->get('/orderby/{order}', function (Request $request, Response $response) {
 
        //Show the page (from Twig and its template loader)
       //var_dump($arrays);
-      echo $twig->render('home.twig',array('datas' => $arrays));
+      echo $twig->render('order.twig',array('datas' => $arrays));
 
       } else {
           echo "unvalid";
